@@ -22,7 +22,7 @@ public final class CreatureModel extends SinglePartEntityModel<CreatureEntity>{
    box(head,"eye_l",-3.1f,-1.5f,-4.5f,1,1,1,0,0,0,112,0);box(head,"eye_r",2.1f,-1.5f,-4.5f,1,1,1,0,0,0,112,0);
    box(p,"a",-1.5f,0,-1.5f,3,8,3,-2.5f,16,-4,64,0);box(p,"b",-1.5f,0,-1.5f,3,8,3,2.5f,16,-4,64,0);
    box(p,"c",-1.5f,0,-1.5f,3,8,3,-2.5f,16,6,64,0);box(p,"d",-1.5f,0,-1.5f,3,8,3,2.5f,16,6,64,0);
-   ModelPartData tail=box(p,"tail",-1.5f,-1,0,3,3,9,0,12,7,80,0);tail.getTransform();
+   box(p,"tail",-1.5f,-1,0,3,3,9,0,12,7,80,0);
   }else if(kind==1){
    box(p,"body",-7,-6,-6,14,12,12,0,18,0,0,0);box(p,"head",-5,-2,-6.2f,10,4,1,0,16,0,0,32);
    box(p,"a",-1.5f,-1.5f,-.5f,3,3,1,-3,15,-6.5f,112,0);box(p,"b",-1.5f,-1.5f,-.5f,3,3,1,3,15,-6.5f,112,0);
