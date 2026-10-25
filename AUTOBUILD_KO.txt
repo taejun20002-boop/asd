@@ -1,0 +1,7 @@
+자동 빌드 프로젝트 — 설치용 모드팩 자체가 아닙니다.
+GitHub 저장소를 만들고 이 ZIP 내부의 파일과 .github 폴더를 저장소 최상위에 올리세요. 숨김 .github 폴더 누락 주의.
+Actions → Build Modrinth Pack 실행. 초록색 성공 시 Artifacts의 Modrinth-Import-Pack을 받습니다.
+아티팩트 ZIP을 풀면 ShadowRPG-Creatures.mrpack이 나옵니다. 그 파일을 모드린스에서 Import 합니다.
+빨간색 실패 시 실행 로그가 필요합니다. 이 프로젝트의 실제 Java 컴파일은 확인되지 않았습니다.
+이 계정에서 GitHub 빌드를 실행한 것은 아닙니다. 자동 빌드 구성/패키징 코드만 제공하는 상태입니다.
+3종 생성 알과 독립 모델용 개발 소스이며 기존 RPG 월드/직업 선택 기능은 없습니다.
