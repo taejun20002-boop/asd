@@ -1,0 +1,47 @@
+name: Build Modrinth Pack
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.8'
+
+      - name: Compile actual Fabric mod
+        run: gradle --no-daemon build --stacktrace
+
+      - name: Package Modrinth import file
+        run: python package_modrinth.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Modrinth-Import-Pack
+          path: build/ShadowRPG-Creatures.mrpack
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Build-JAR
+          path: |
+            build/libs/*.jar
+            !build/libs/*-sources.jar
+          if-no-files-found: error
